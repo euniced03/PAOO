@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/TrenProject.dir/tema.cpp.o  -o TrenProject 

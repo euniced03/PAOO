@@ -1,0 +1,3 @@
+/home/eunice/Desktop/PAOO_Eunice/build/CMakeFiles/rebuild_cache.dir
+/home/eunice/Desktop/PAOO_Eunice/build/CMakeFiles/edit_cache.dir
+/home/eunice/Desktop/PAOO_Eunice/build/CMakeFiles/TrenProject.dir
