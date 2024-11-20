@@ -4,29 +4,29 @@
 // Item 4: Make sure that objects are initialized before they’re used
 //Item 5: Know what functions C++ silently writes and calls
 // Item 6: Explicitly disallow the use of compiler generated functions you do not want
-class Tren {
+class Serial {
     std::string nume;
-    int vagoane;
+    int episoade;
 
 public:
-    Tren(const std::string& nume, int vagoane)
-        : nume(nume), vagoane(vagoane) {}
+    Serial(const std::string& nume, int episoade)
+        : nume(nume), episoade(episoade) {}
 
     //Copy constructor
-    /*Tren(const Tren& other)
-        : nume(other.nume), vagoane(other.vagoane) {
-        std::cout << "Trenul '" << this->nume << "' a fost copiat prin copy constructor.\n";
+    /*Serial(const Serial& other)
+        : nume(other.nume), episoade(other.episoade) {
+        std::cout << "Serialul '" << this->nume << "' a fost copiat prin copy constructor.\n";
     }*/
 
-    Tren(const Tren&) = delete; // stergere functie copy constructor generata automat
-    Tren& operator=(const Tren&) = delete; // stergere functie operator de atribuire generata automat
+    Serial(const Serial&) = delete; // stergere functie copy constructor generata automat
+    Serial& operator=(const Serial&) = delete; // stergere functie operator de atribuire generata automat
 
     void afiseaza() const {
-        std::cout << "Nume tren: " << nume << ", Vagoane: " << vagoane << "\n";
+        std::cout << "Nume serial: " << nume << ", episoade: " << episoade << "\n";
     }
     //Destructor
-    ~Tren() {
-        std::cout << "Tren '" << nume << "' distrus prin destructor.\n";
+    ~Serial() {
+        std::cout << "Serial '" << nume << "' distrus prin destructor.\n";
     }
 };
 
@@ -34,15 +34,15 @@ public:
 
 int main() {
     // Item 4: initislizarea obiectului t1
-    Tren t1("IR 797", 4);
-    t1.afiseaza();
+    Serial s1("Prison Break", 150);
+    s1.afiseaza();
 
-    // Creem un alt obiect Tren prin copiere
-    //Tren t2 = t1; // acum vom avea eroare aici, copy constructorul a fost sters cu delete
-    //t2.afiseaza();
+    // Creem un alt obiect serial prin copiere
+    //Serial s2 = s1; // acum vom avea eroare aici, copy constructorul a fost sters cu delete
+    //s2.afiseaza();
 
-    Tren t3("R 13708", 6);
-    t3.afiseaza();
-    //t3 = t1; //aici vom avea eroare daca incercam sa atribuim obiectului t3 pe t1, pt ca operatorul de atribuire a fost sters cu delete
+    Serial s3("Arrow", 100);
+    s3.afiseaza();
+    //s3 = s1; //aici vom avea eroare daca incercam sa atribuim obiectului t3 pe t1, pt ca operatorul de atribuire a fost sters cu delete
     return 0;
 }
